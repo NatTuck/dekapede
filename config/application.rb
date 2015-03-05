@@ -8,8 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Dekapede
   class Application < Rails::Application
-    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
     config.middleware.delete Rack::Lock
+    config.middleware.use FayeRails::Middleware, mount: '/faye', :timeout => 25
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
