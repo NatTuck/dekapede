@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+APP_PATH = File.expand_path('../../config/application', __FILE__)
+require_relative '../config/environment'
+
+require 'eventmachine'
+
+EM.run do
+  faye = Faye::Client.new("http://localhost:3000/faye")
+  faye.connect
+
+  token = "none"
+
+  sub = faye.subscribe('/commands') do |msg|
+    puts msg.inspect
+    token = msg['token']
+  end
+
+  EventMachine::PeriodicTimer.new(5) do
+    pub = faye.publish("/events/#{token}", text: Time.now.to_s)
+    pub.callback do
+      puts "Tick"
+    end
+
+    pub.errback do |msg|
+      puts "Error: #{msg}"
+    end
+  end
+end

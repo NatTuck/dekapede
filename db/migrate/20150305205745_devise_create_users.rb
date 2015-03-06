@@ -4,6 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Application Specific
       t.string  :name, null: false
       t.boolean :admin, null: false, default: false
+      t.string  :token, null: false
 
       ## Database authenticatable
       t.string :email,              null: false
