@@ -31,13 +31,14 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <%= nav_link_to "Home", '/' %>
+            <%= nav_link_to "Characters", '/characters' %>
             <%= nav_link_to "Play", '/play' %>
             <%= nav_link_to "About", '/main/about' %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><%= link_to "(#{current_user.name}) Sign Out", 
-                destroy_user_session_path %></li>
+                destroy_user_session_path, method: 'delete' %></li>
             <% else %>
               <li><%= link_to "Sign In", new_user_session_path %></li>
             <% end %>

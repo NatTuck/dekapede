@@ -10,4 +10,9 @@ module ApplicationHelper
       end
     end
   end
+
+  def glyph(name)
+    content_tag(:span, class: "glyphicon glyphicon-#{name}", 'aria-hidden': "true") do
+    end
+  end
 end

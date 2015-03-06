@@ -55,6 +55,8 @@ GEM
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap-sass-extras (0.0.6)
+      rails (>= 3.1.0)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -217,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
+  bootstrap-sass-extras
   byebug
   coffee-rails (~> 4.1.0)
   devise

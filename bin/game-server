@@ -4,6 +4,8 @@ require_relative '../config/environment'
 
 require 'eventmachine'
 
+
+
 EM.run do
   faye = Faye::Client.new("http://localhost:3000/faye")
   faye.connect
