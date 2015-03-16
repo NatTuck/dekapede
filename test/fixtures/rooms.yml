@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: An Empty Field 
+  zone: two
+  xx: 0
+  yy: 0
+  zz: 0
+  name: There's grass. Lots of grass.
+  desc: MyText
+  props: 
+
+two:
+  name: Next To A Big Tree
+  zone: two
+  xx: 1
+  yy: 0
+  zz: 0
+  desc: There's a Big Tree here.
+  props: 

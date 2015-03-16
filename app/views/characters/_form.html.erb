@@ -1,14 +1,18 @@
 <%= form_for @character, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.hidden_field :user_id %>
+
   <div class="form-group">
     <%= f.label :name, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :name, :class => 'text_field form-control' %>
     </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :user_id, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :user_id, :class => 'text_field form-control' %>
+    <%= f.label :world, :class => 'control-label col-md-2' %>
+    <div class="col-md-10 ">
+      <%= select(:character, :world_id, World.all.collect {|w| [w.name, w.id]}, 
+                 {}, {class: 'form-control'}) %>
     </div>
   </div>
 

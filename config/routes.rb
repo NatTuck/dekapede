@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  resources :rooms
+
+  resources :zones
+  get 'zones/:id/new_room', to: 'zones#new_room'
+
+  resources :worlds
+
   resources :characters
 
   devise_for :users
 
   get 'main/index'
   get 'main/about'
+  get 'main/build'
 
   get '/play', to: 'play#index'
 

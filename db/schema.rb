@@ -11,13 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306171350) do
+ActiveRecord::Schema.define(version: 20150306184004) do
 
   create_table "characters", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                    null: false
+    t.integer  "user_id",                 null: false
+    t.integer  "world_id",                null: false
+    t.integer  "room_id"
+    t.text     "props",      default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string   "name",                    null: false
+    t.integer  "zone_id",                 null: false
+    t.integer  "xx",                      null: false
+    t.integer  "yy",                      null: false
+    t.integer  "zz",                      null: false
+    t.text     "desc",                    null: false
+    t.text     "props",      default: "", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,5 +60,20 @@ ActiveRecord::Schema.define(version: 20150306171350) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "worlds", force: :cascade do |t|
+    t.string   "name",          null: false
+    t.integer  "spawn_room_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "world_id",   null: false
+    t.integer  "size",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

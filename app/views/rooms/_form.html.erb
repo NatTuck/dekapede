@@ -1,0 +1,47 @@
+<%= form_for @room, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.hidden_field :zone_id %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :desc, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :desc, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :props, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :props, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zz, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zz, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :yy, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :yy, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :xx, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :xx, :class => 'text_field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  @room.zone, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

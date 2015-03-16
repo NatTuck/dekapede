@@ -1,0 +1,43 @@
+<%- model_class = Zone -%>
+
+<div class="row">
+  <div class="col-sm-12">
+
+    <div>
+      <%= link_to "Back to World: #{@zone.world.name}", @zone.world %>
+    </div>
+    
+    <div class="page-header">
+      <h1>Zone: <%= @zone.name %></h1>
+    </div>
+    
+    <div>
+      <h2>This Zone</h2>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_zone_path(@zone), :class => 'btn btn-default' %>
+    </div>
+
+    <div>
+      <h2>Rooms</h2>
+
+      <table class="table">
+        <% kk = 0 %>
+        <% (@zone.size - 1).downto(0) do |jj| %>
+          <tr>
+            <% 0.upto(@zone.size - 1) do |ii| %>
+              <% room = @zone.room(kk, jj, ii) %>
+              <% if room.nil? %>
+                <td><%= link_to "#{kk}, #{jj}, #{ii}", 
+                                new_zone_room_path(@zone, kk, jj, ii) %></td>
+              <% else %>
+                <td><%= link_to room.name, room %></td>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+
+  </div>
+</div>

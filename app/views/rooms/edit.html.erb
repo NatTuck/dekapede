@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Edit Room</h1>
+
+    <%= form_for @world do |ff| %>
+      <%= ff.hidden_field :spawn_room_id %>
+
+      <% if @room.world.spawn_room_id == @room.id %>
+        <p>This is the world spawn room.</p>
+      <% else %>
+        <%= ff.submit "Make Spawn" %>
+      <% end %>
+    <% end %>
+
+    <%= render :partial => 'form' %>
+
+  </div>
+</div>

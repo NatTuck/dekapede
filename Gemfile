@@ -20,6 +20,7 @@ gem 'therubyracer', platforms: :ruby
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'underscore-rails'
+gem 'ejs'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -40,6 +41,7 @@ gem 'faye-rails', git: 'https://github.com/jamesotron/faye-rails'
 
 # Users
 gem 'devise'
+gem 'cancancan'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,5 +58,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'quiet_assets'
+
+  gem 'letter_opener'
 end
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: The Big Cave
+  world: one
+  size: 4
+
+two:
+  name: Green Fields
+  world: one
+  size: 8

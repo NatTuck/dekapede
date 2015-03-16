@@ -1,0 +1,41 @@
+<%- model_class = World -%>
+<div class="row">
+  <div class="col-sm-12">
+
+    <div>
+      <%= link_to "Back to Worlds", '/worlds' %>
+    </div>
+
+    <div class="page-header">
+      <h1>World: <%= @world.name %></h1>
+    </div>
+
+    <div>
+      <h2>This World</h2>
+
+      <% if @world.spawn_room %>
+        <p>Spawn Room: <%= link_to @world.spawn_room.name, @world.spawn_room %></p>
+      <% end %>
+
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_world_path(@world), :class => 'btn btn-default' %>
+    </div>
+
+    <div>
+      <h2>Zones</h2>
+
+      <ul>
+        <% @world.zones.each do |zone| %>
+          <li><%= link_to zone.name, zone %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div>
+      <h2>New Zone</h2>
+
+      <%= render 'zones/form' %>
+    </div>
+  </div>
+</div>
+

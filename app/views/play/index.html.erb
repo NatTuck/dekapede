@@ -1,11 +1,85 @@
+<input type="hidden" id="auth-token" value="<%= current_user.token %>">
+
 <div class="row">
-  <div class="col-sm-12">
-    <h1>Play</h1>
-
-    <input type="hidden" id="auth-token" value="<%= current_user.token %>">
-
-    <div class="msgs">
-
+  <!-- left column -->
+  <div class="col-sm-6">
+    <div id="main-view">
+      <p>Connecting...</p>
     </div>
+  </div>
+
+  <!-- right column -->
+  <div class="col-sm-6">
+
+    <div class="label label-default">
+      Status
+    </div>
+    <div>
+      <table class="table">
+        <tr>
+          <td>Name</td>
+          <td><%= current_user.primary_character.name %></td>
+        </tr>
+        <tr>
+          <td>Species</td>
+          <td>Space Unicorn</td>
+        </tr>
+        <tr>
+          <td>Health</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Focus</td>
+          <td>100</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="label label-default">
+      Messages
+    </div>
+    <div class="well" id="messages">
+      1035.4: Hobblebush has been eaten by a Grue.<br>
+      ...<br>
+      ...<br>
+      ...<br>
+      ...
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="label label-default">
+      Actions
+    </div>
+
+    <div>
+      <br>
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td><button id="btn-north">North</button></td>
+          <td>&nbsp;</td>
+          <td style="width: 4em">&nbsp;</td>
+          <td><button>Attack</button></td>
+        </tr>
+        <tr>
+          <td><button id="btn-west">West</button></td>
+          <td>&nbsp;</td>
+          <td><button id="btn-east">East</button></td>
+          <td>&nbsp;</td>
+          <td><button>Search</button></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><button id="btn-south">South</button></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td><button>Use Item</button></td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 </div>

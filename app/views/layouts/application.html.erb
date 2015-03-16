@@ -33,6 +33,7 @@
             <%= nav_link_to "Home", '/' %>
             <%= nav_link_to "Characters", '/characters' %>
             <%= nav_link_to "Play", '/play' %>
+            <%= nav_link_to "Build", '/worlds' %>
             <%= nav_link_to "About", '/main/about' %>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -48,6 +49,8 @@
     </nav> 
    
     <div class="main-content">
+      <%= bootstrap_flash %>
+
       <%= yield %>
     </div>
   </div>

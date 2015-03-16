@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /characters
   # GET /characters.json
@@ -15,6 +15,7 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
+    @character.user_id = current_user.id
   end
 
   # GET /characters/1/edit
@@ -69,6 +70,6 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :user_id)
+      params.require(:character).permit(:name, :user_id, :world_id)
     end
 end
