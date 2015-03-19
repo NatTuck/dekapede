@@ -36,8 +36,11 @@ register_btns = () ->
   $('#btn-south').click () ->
     command('move', 'south')
 
-$(start_coms)
-$(register_btns)
+$(() ->
+  if $('body.play-index').length > 0
+    start_coms()
+    register_btns()
+)
 
 #$('#btn').click () ->
 #  client.publish('/spam', {text: 'Hi there'})
